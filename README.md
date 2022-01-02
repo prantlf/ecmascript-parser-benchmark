@@ -1,6 +1,15 @@
 # ECMAScript Parser Benchmark
 
+Compares the speed and package size of various ECMAScript parsers.
+
 The new contender `meriyah` runs twice as fast as the old bard `esprima`.
+
+## Synopsis
+
+    git clone https://github.com/prantlf/ecmascript-parser-benchmark.git
+    cd ecmascript-parser-benchmark
+    pnpm i
+    npm start
 
 ## Parsing Speed
 
