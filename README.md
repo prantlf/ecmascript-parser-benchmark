@@ -15,7 +15,8 @@ Generating code with `astring` is faster than with `escodegen`.
 
 ## Parsing Speed
 
-    $ node perf/script && node perf/module && node perf/script --locations && node perf/module --locations
+    $ node perf/script && node perf/module && \
+      node perf/script --locations && node perf/module --locations
 
     Parsing jquery.js as a script by...
       esprima x 80.73 ops/sec ±1.79% (70 runs sampled)
