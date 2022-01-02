@@ -28,7 +28,7 @@ The new contender `meriyah` runs twice as fast as the old bard `esprima`.
 
 ## Exported Parser Size
 
-    $ package-size esprima acorn @babel/parser meriyah seafox kataw @azariasb/escaya
+    $ package-size esprima acorn @babel/parser meriyah seafox kataw @azariasb/escaya tenko
 
     package                  size       minified   gzipped
     esprima@4.0.1            278.47 KB  132.14 KB  28.59 KB

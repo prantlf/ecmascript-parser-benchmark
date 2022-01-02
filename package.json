@@ -40,6 +40,7 @@
   },
   "keywords": [
     "ecmascript",
+    "ecmascript-parser",
     "parser",
     "benchmark"
   ]
