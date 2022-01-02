@@ -1,7 +1,7 @@
 {
   "name": "ecmascript-parser-benchmark",
-  "description": "Compares the speed and package size of various ECMAScript parsers.",
-  "version": "0.0.1",
+  "description": "Compares the speed and package size of various ECMAScript parsers and code generators.",
+  "version": "0.1.0",
   "author": "Ferdinand Prantl <prantlf@gmail.com>",
   "license": "MIT",
   "licenses": [
@@ -19,16 +19,28 @@
     "url": "https://github.com/prantlf/ecmascript-parser-benchmark/issues"
   },
   "scripts": {
-    "start:script": "node perf/script",
-    "start:module": "node perf/module",
-    "start": "npm run start:script && npm run start:module",
+    "start:parser:script": "node perf/script",
+    "start:parser:module": "node perf/module",
+    "start:parser": "npm run start:parser:script && npm run start:parser:module",
+    "start:parser:script:locations": "node perf/script --locations",
+    "start:parser:module:locations": "node perf/module --locations",
+    "start:parser:locations": "npm run start:parser:script:locations && npm run start:parser:module:locations",
+    "start:parser:all": "npm run start:parser && npm run start:parser:locations",
+    "start:generator": "node perf/generator",
+    "start:generator:sourcemap": "node perf/generator --source-map",
+    "start:generator:all": "npm run start:generator && npm run start:generator:sourcemap",
+    "start": "npm run start:parser:all && npm run start:generator:all",
     "test": "eslint perf"
   },
   "devDependencies": {
     "@azariasb/escaya": "^0.0.63",
+    "@babel/generator": "^7.16.7",
     "@babel/parser": "^7.16.7",
     "acorn": "^8.7.0",
+    "astring": "^1.8.1",
     "benchmark": "^2.1.4",
+    "cherow": "^1.6.9",
+    "escodegen": "^2.0.0",
     "eslint": "^8.6.0",
     "esprima": "^4.0.1",
     "jquery": "^3.6.0",
@@ -36,12 +48,14 @@
     "marionette": "^5.0.0-alpha.2",
     "meriyah": "^4.2.0",
     "seafox": "^1.7.1",
+    "source-map": "^0.7.3",
     "tenko": "^2.0.1"
   },
   "keywords": [
     "ecmascript",
     "ecmascript-parser",
     "parser",
+    "code-generator",
     "benchmark"
   ]
 }
