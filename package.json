@@ -1,0 +1,46 @@
+{
+  "name": "ecmascript-parser-benchmark",
+  "description": "Compares the speed and package size of various ECMAScript parsers.",
+  "version": "0.0.1",
+  "author": "Ferdinand Prantl <prantlf@gmail.com>",
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/prantlf/ecmascript-parser-benchmark/blob/master/package/LICENSE"
+    }
+  ],
+  "homepage": "https://github.com/prantlf/ecmascript-parser-benchmark#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prantlf/ecmascript-parser-benchmark.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prantlf/ecmascript-parser-benchmark/issues"
+  },
+  "scripts": {
+    "start:script": "node perf/script",
+    "start:module": "node perf/module",
+    "start": "npm run start:script && npm run start:module",
+    "test": "eslint perf"
+  },
+  "devDependencies": {
+    "@azariasb/escaya": "^0.0.63",
+    "@babel/parser": "^7.16.7",
+    "acorn": "^8.7.0",
+    "benchmark": "^2.1.4",
+    "eslint": "^8.6.0",
+    "esprima": "^4.0.1",
+    "jquery": "^3.6.0",
+    "kataw": "^0.0.81",
+    "marionette": "^5.0.0-alpha.2",
+    "meriyah": "^4.2.0",
+    "seafox": "^1.7.1",
+    "tenko": "^2.0.1"
+  },
+  "keywords": [
+    "ecmascript",
+    "parser",
+    "benchmark"
+  ]
+}
