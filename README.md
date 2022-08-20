@@ -19,48 +19,54 @@ Generating code with `astring` is faster than with `escodegen`.
       node perf/script --locations && node perf/module --locations
 
     Parsing jquery.js as a script by...
-      esprima x 80.73 ops/sec ±1.79% (70 runs sampled)
-      acorn x 77.70 ops/sec ±1.07% (68 runs sampled)
-      babel x 43.30 ops/sec ±6.10% (55 runs sampled)
-      meriyah x 157 ops/sec ±0.87% (79 runs sampled)
-      kataw x 69.67 ops/sec ±5.21% (61 runs sampled)
-      seafox x 93.94 ops/sec ±5.31% (65 runs sampled)
-      cherow x 127 ops/sec ±3.61% (73 runs sampled)
-      escaya x 104 ops/sec ±1.28% (76 runs sampled)
-      tenko x 49.77 ops/sec ±8.91% (57 runs sampled)
+      esprima x 86.22 ops/sec ±1.98% (74 runs sampled)
+      acorn x 88.63 ops/sec ±0.51% (76 runs sampled)
+      babel x 44.15 ops/sec ±4.65% (60 runs sampled)
+      hermes x 25.15 ops/sec ±4.46% (46 runs sampled)
+      meriyah x 146 ops/sec ±2.54% (71 runs sampled)
+      kataw x 84.97 ops/sec ±3.21% (63 runs sampled)
+      seafox x 103 ops/sec ±1.90% (75 runs sampled)
+      cherow x 179 ops/sec ±1.27% (83 runs sampled)
+      escaya x 115 ops/sec ±1.27% (74 runs sampled)
+      tenko x 56.79 ops/sec ±9.32% (63 runs sampled)
 
     Parsing collection-view.js as a module by...
-      esprima x 1,475 ops/sec ±1.40% (89 runs sampled)
-      acorn x 1,414 ops/sec ±0.62% (91 runs sampled)
-      babel x 1,219 ops/sec ±1.20% (87 runs sampled)
-      meriyah x 2,745 ops/sec ±0.58% (90 runs sampled)
-      kataw x 2,144 ops/sec ±1.04% (88 runs sampled)
-      seafox x 2,376 ops/sec ±1.22% (90 runs sampled)
-      cherow x 2,992 ops/sec ±1.66% (91 runs sampled)
-      escaya x 2,540 ops/sec ±0.86% (91 runs sampled)
-      tenko x 1,042 ops/sec ±1.43% (88 runs sampled)
+      esprima x 1,485 ops/sec ±1.14% (90 runs sampled)
+      acorn x 1,407 ops/sec ±1.05% (92 runs sampled)
+      babel x 1,242 ops/sec ±1.24% (91 runs sampled)
+      hermes x 517 ops/sec ±1.14% (93 runs sampled)
+      meriyah x 3,046 ops/sec ±0.76% (95 runs sampled)
+      kataw x 2,366 ops/sec ±0.98% (92 runs sampled)
+      seafox x 2,516 ops/sec ±1.05% (90 runs sampled)
+      cherow x 3,133 ops/sec ±0.72% (93 runs sampled)
+      escaya x 2,628 ops/sec ±0.98% (91 runs sampled)
+      tenko x 1,134 ops/sec ±1.03% (93 runs sampled)
 
     Parsing jquery.js as a script with locations by...
-      esprima x 69.65 ops/sec ±2.46% (71 runs sampled)
-      acorn x 50.15 ops/sec ±4.52% (54 runs sampled)
-      babel x 40.07 ops/sec ±7.28% (55 runs sampled)
-      meriyah x 75.03 ops/sec ±6.19% (53 runs sampled)
-      kataw x 67.34 ops/sec ±5.19% (60 runs sampled)
-      seafox x 66.59 ops/sec ±6.80% (57 runs sampled)
-      cherow x 84.89 ops/sec ±4.46% (63 runs sampled)
-      escaya x 71.82 ops/sec ±5.03% (64 runs sampled)
-      tenko x 46.02 ops/sec ±9.27% (53 runs sampled)
+      esprima x 75.43 ops/sec ±0.99% (72 runs sampled)
+      acorn x 50.94 ops/sec ±2.70% (58 runs sampled)
+      babel x 38.88 ops/sec ±4.62% (52 runs sampled)
+      hermes x 25.67 ops/sec ±4.59% (46 runs sampled)
+      meriyah x 100 ops/sec ±2.17% (73 runs sampled)
+      kataw x 80.06 ops/sec ±3.82% (61 runs sampled)
+      seafox x 103 ops/sec ±3.43% (67 runs sampled)
+      cherow x 80.43 ops/sec ±2.80% (62 runs sampled)
+      escaya x 115 ops/sec ±1.44% (83 runs sampled)
+      tenko x 47.22 ops/sec ±8.16% (53 runs sampled)
 
     Parsing collection-view.js as a module with locations by...
-      esprima x 1,264 ops/sec ±1.90% (88 runs sampled)
-      acorn x 1,274 ops/sec ±1.19% (91 runs sampled)
-      babel x 1,181 ops/sec ±1.28% (89 runs sampled)
-      meriyah x 1,364 ops/sec ±4.32% (73 runs sampled)
-      kataw x 2,286 ops/sec ±1.73% (89 runs sampled)
-      seafox x 2,268 ops/sec ±1.26% (91 runs sampled)
-      cherow x 2,514 ops/sec ±1.31% (94 runs sampled)
-      escaya x 2,310 ops/sec ±0.88% (93 runs sampled)
-      tenko x 622 ops/sec ±5.91% (68 runs sampled)
+      esprima x 1,293 ops/sec ±1.29% (90 runs sampled)
+      acorn x 1,268 ops/sec ±1.24% (90 runs sampled)
+      babel x 1,132 ops/sec ±1.44% (89 runs sampled)
+      hermes x 509 ops/sec ±1.22% (91 runs sampled)
+      meriyah x 2,406 ops/sec ±1.31% (90 runs sampled)
+      kataw x 2,333 ops/sec ±1.57% (91 runs sampled)
+      seafox x 2,274 ops/sec ±1.26% (92 runs sampled)
+      cherow x 2,551 ops/sec ±0.83% (94 runs sampled)
+      escaya x 2,455 ops/sec ±0.65% (93 runs sampled)
+      tenko x 1,085 ops/sec ±1.06% (93 runs sampled)
+
+The `hermes` parser always creates an AST with source code locations. They cannot be disabled to gain more performance.
 
 ## Code Generating Speed
 
@@ -82,11 +88,12 @@ Generating code with `astring` is faster than with `escodegen`.
 
     package                  size       minified   gzipped
     esprima@4.0.1            278.47 KB  132.14 KB  28.59 KB
-    acorn@8.7.0              206.63 KB  107.42 KB  30.85 KB
-    @babel/parser@7.16.7     436.57 KB  255.28 KB  65.34 KB
-    meriyah@4.2.0            128.56 KB  126.95 KB  40.17 KB
+    acorn@8.8.0              206.72 KB  107.29 KB  30.81 KB
+    @babel/parser@7.18.11    469.19 KB  270.57 KB  69.8 KB
+    hermes-parser@0.9.0      1.8 MB     1.23 MB    421.12 KB
+    meriyah@4.3.0            128.94 KB  127.33 KB  40.25 KB
     seafox@1.7.1             95 KB      93.41 KB   25.57 KB
-    kataw@0.0.81             297.61 KB  291.29 KB  59.47 KB
+    kataw@0.0.81             297.65 KB  291.29 KB  59.47 KB
     @azariasb/escaya@0.0.63  98.24 KB   96.53 KB   25.97 KB
     tenko@2.0.1              371.71 KB  142.41 KB  39.75 KB
 

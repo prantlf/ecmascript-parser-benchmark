@@ -1,3 +1,8 @@
+## 0.2.0
+
+* Add a new parser - `hermes-parser`.
+* Upgrade dependencies.
+
 ## 0.1.0
 
 * Add a new parser - `cherow`.

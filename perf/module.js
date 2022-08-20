@@ -3,6 +3,7 @@ const { createSuite } = require('./suite')
 const esprima = require('esprima')
 const acorn = require('acorn')
 const babel = require('@babel/parser')
+const hermes = require('hermes-parser')
 const meriyah = require('meriyah')
 const seafox = require('seafox')
 const cherow = require('cherow')
@@ -27,6 +28,10 @@ function byAcorn() {
 
 function byBabel() {
   babel.parse(content, { sourceType: 'module', ranges: loc })
+}
+
+function byHermes() {
+  hermes.parse(content, { sourceType: 'module' })
 }
 
 function byMeriyah() {
@@ -59,6 +64,7 @@ async function compare() {
     .add('esprima', byEsprima)
     .add('acorn', byAcorn)
     .add('babel', byBabel)
+    .add('hermes', byHermes)
     .add('meriyah', byMeriyah)
     .add('kataw', byKataw)
     .add('seafox', bySeafox)

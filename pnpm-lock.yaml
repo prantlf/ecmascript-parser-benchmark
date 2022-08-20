@@ -11,6 +11,7 @@ specifiers:
   cherow: ^1.6.9
   escodegen: ^2.0.0
   esprima: ^4.0.1
+  hermes-parser: ^0.9.0
   jquery: ^3.6.0
   kataw: ^0.0.81
   marionette: ^5.0.0-alpha.2
@@ -30,6 +31,7 @@ devDependencies:
   cherow: 1.6.9
   escodegen: 2.0.0
   esprima: 4.0.1
+  hermes-parser: 0.9.0
   jquery: 3.6.0
   kataw: 0.0.81
   marionette: 5.0.0-alpha.2
@@ -335,6 +337,16 @@ packages:
 
   /fast-levenshtein/2.0.6:
     resolution: {integrity: sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=}
+    dev: true
+
+  /hermes-estree/0.9.0:
+    resolution: {integrity: sha512-5DZ7Y0CbHVk8zPqgRCvqp8iw+P05svnQDI1aJFjdqCfXJ/1CZ+8aYpGlhJ29zCG5SE5duGTzSxogAYYI4QqXqw==}
+    dev: true
+
+  /hermes-parser/0.9.0:
+    resolution: {integrity: sha512-IcvJIlAn+9tpHkP+HTsxWKrIdQPp0gvGrrQmxlL4XnNS+Oh6R/Fpxbcoflm2kY3zgQjEvxZxLiK/2+k3/5wsrw==}
+    dependencies:
+      hermes-estree: 0.9.0
     dev: true
 
   /jquery/3.6.0:

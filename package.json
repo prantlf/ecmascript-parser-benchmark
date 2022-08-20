@@ -29,7 +29,8 @@
     "start:generator": "node perf/generator",
     "start:generator:sourcemap": "node perf/generator --source-map",
     "start:generator:all": "npm run start:generator && npm run start:generator:sourcemap",
-    "start": "npm run start:parser:all && npm run start:generator:all",
+    "start:sizes": "package-size esprima acorn @babel/parser meriyah seafox kataw @azariasb/escaya tenko",
+    "start": "npm run start:parser:all && npm run start:generator:all && npm run start:sizes",
     "test": "denolint"
   },
   "devDependencies": {
@@ -43,6 +44,7 @@
     "cherow": "^1.6.9",
     "escodegen": "^2.0.0",
     "esprima": "^4.0.1",
+    "hermes-parser": "^0.9.0",
     "jquery": "^3.6.0",
     "kataw": "^0.0.81",
     "marionette": "^5.0.0-alpha.2",
