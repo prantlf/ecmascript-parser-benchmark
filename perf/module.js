@@ -10,6 +10,8 @@ const cherow = require('cherow')
 const kataw = require('kataw')
 const escaya = require('@azariasb/escaya')
 const { Tenko, GOAL_MODULE } = require ('tenko')
+const TreeSitter = require('tree-sitter')
+const jsLanguage = require('tree-sitter-javascript')
 
 const loc = process.argv[2] === '--locations'
 let content
@@ -58,6 +60,12 @@ function byTenko() {
   Tenko(content, { goalMode: GOAL_MODULE, locationTracking: loc })
 }
 
+function byTreeSitter() {
+  const treeSitter = new TreeSitter()
+  treeSitter.setLanguage(jsLanguage)
+  treeSitter.parse(content)
+}
+
 async function compare() {
   content = await readFile(`${__dirname}/../node_modules/marionette/modules/collection-view.js`, 'utf8')
   createSuite(`Parsing collection-view.js as a module ${loc ? 'with locations ': ''}by...`)
@@ -71,6 +79,7 @@ async function compare() {
     .add('cherow', byCherow)
     .add('escaya', byEscaya)
     .add('tenko', byTenko)
+    .add('tree-sitter', byTreeSitter)
     .start()
 }
 

@@ -1,7 +1,7 @@
 {
   "name": "ecmascript-parser-benchmark",
   "description": "Compares the speed and package size of various ECMAScript parsers and code generators.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Ferdinand Prantl <prantlf@gmail.com>",
   "license": "MIT",
   "licenses": [
@@ -31,7 +31,8 @@
     "start:generator:all": "npm run start:generator && npm run start:generator:sourcemap",
     "start:sizes": "package-size esprima acorn @babel/parser meriyah seafox kataw @azariasb/escaya tenko",
     "start": "npm run start:parser:all && npm run start:generator:all && npm run start:sizes",
-    "test": "denolint"
+    "test": "denolint",
+    "version": "npx conventional-changelog-cli -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "devDependencies": {
     "@azariasb/escaya": "^0.0.63",
@@ -51,7 +52,9 @@
     "meriyah": "^4.3.0",
     "seafox": "^1.7.1",
     "source-map": "^0.7.4",
-    "tenko": "^2.0.1"
+    "tenko": "^2.0.1",
+    "tree-sitter": "^0.20.0",
+    "tree-sitter-javascript": "^0.19.0"
   },
   "keywords": [
     "ecmascript",

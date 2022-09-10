@@ -10,6 +10,8 @@ const cherow = require('cherow')
 const kataw = require('kataw')
 const escaya = require('@azariasb/escaya')
 const { Tenko } = require ('tenko')
+const TreeSitter = require('tree-sitter')
+const jsLanguage = require('tree-sitter-javascript')
 
 const loc = process.argv[2] === '--locations'
 let content
@@ -54,6 +56,12 @@ function byTenko() {
   Tenko(content, { locationTracking: loc })
 }
 
+function byTreeSitter() {
+  const treeSitter = new TreeSitter()
+  treeSitter.setLanguage(jsLanguage)
+  treeSitter.parse(content)
+}
+
 async function compare() {
   content = await readFile(`${__dirname}/../node_modules/jquery/dist/jquery.js`, 'utf8')
   createSuite(`Parsing jquery.js as a script ${loc ? 'with locations ': ''}by...`)
@@ -67,6 +75,7 @@ async function compare() {
     .add('cherow', byCherow)
     .add('escaya', byEscaya)
     .add('tenko', byTenko)
+    .add('tree-sitter', byTreeSitter)
     .start()
 }
 
