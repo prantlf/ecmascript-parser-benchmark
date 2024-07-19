@@ -29,7 +29,7 @@
     "start:generator": "node perf/generator",
     "start:generator:sourcemap": "node perf/generator --source-map",
     "start:generator:all": "npm run start:generator && npm run start:generator:sourcemap",
-    "start:sizes": "package-size esprima acorn @babel/parser meriyah seafox kataw @azariasb/escaya tenko",
+    "start:sizes": "package-size esprima acorn @babel/parser meriyah seafox kataw @azariasb/escaya tenko && node perf/tree-sitter-size",
     "start": "npm run start:parser:all && npm run start:generator:all && npm run start:sizes",
     "test": "biome lint",
     "version": "npx conventional-changelog-cli -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
