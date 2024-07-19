@@ -1,4 +1,4 @@
-const { readFile } = require('fs/promises')
+const { readFile } = require('node:fs/promises')
 const { createSuite } = require('./suite')
 const esprima = require('esprima')
 const escodegen = require('escodegen')
@@ -9,7 +9,9 @@ const { default: babelGenerate } = require('@babel/generator')
 const { SourceMapGenerator } = require('source-map')
 
 const sourceMap = process.argv[2] === '--source-map'
-let content, ast, astBabel
+let content
+let ast
+let astBabel
 
 function byEscodegen() {
   escodegen.generate(ast, sourceMap ? {

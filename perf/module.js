@@ -1,4 +1,4 @@
-const { readFile } = require('fs/promises')
+const { readFile } = require('node:fs/promises')
 const { createSuite } = require('./suite')
 const esprima = require('esprima')
 const acorn = require('acorn')
@@ -10,8 +10,13 @@ const cherow = require('cherow')
 const kataw = require('kataw')
 const escaya = require('@azariasb/escaya')
 const { Tenko, GOAL_MODULE } = require ('tenko')
-const TreeSitter = require('tree-sitter')
-const jsLanguage = require('tree-sitter-javascript')
+const isBun = typeof Bun !== 'undefined'
+let TreeSitter
+let jsLanguage
+if (!isBun) {
+  TreeSitter = require('tree-sitter')
+  jsLanguage = require('tree-sitter-javascript')
+}
 
 const loc = process.argv[2] === '--locations'
 let content
@@ -68,7 +73,7 @@ function byTreeSitter() {
 
 async function compare() {
   content = await readFile(`${__dirname}/../node_modules/marionette/modules/collection-view.js`, 'utf8')
-  createSuite(`Parsing collection-view.js as a module ${loc ? 'with locations ': ''}by...`)
+  let suite = createSuite(`Parsing collection-view.js as a module ${loc ? 'with locations ': ''}by...`)
     .add('esprima', byEsprima)
     .add('acorn', byAcorn)
     .add('babel', byBabel)
@@ -79,8 +84,10 @@ async function compare() {
     .add('cherow', byCherow)
     .add('escaya', byEscaya)
     .add('tenko', byTenko)
-    .add('tree-sitter', byTreeSitter)
-    .start()
+  if (!isBun) {
+    suite = suite.add('tree-sitter', byTreeSitter)
+  }
+  suite.start()
 }
 
 compare().catch(error => {
