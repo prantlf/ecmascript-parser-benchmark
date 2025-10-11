@@ -2,7 +2,7 @@
 
 Compares the speed and package size of various ECMAScript parsers and code generators.
 
-The new contender `meriyah` (well, it's been sever years already) runs 1.3x - 2.4x faster and is 1.6x smaller than the old bard `esprima`. Other fast parsers haven't been maintained for several years. Babel produces an AST, which is not compatible with the other parsers.
+The new contender `meriyah` (well, it's been several years already) runs 1.3x - 2.4x faster and is 1.6x smaller than the old bard `esprima`. Other fast parsers haven't been maintained for several years. Babel produces an AST, which isn't compatible with the other parsers.
 
 Generating code with `astring` is 5x - 19x faster than with `escodegen` and `astring` is 6.5x smaller.
 
