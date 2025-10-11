@@ -1,0 +1,5 @@
+onlyBuiltDependencies:
+  - ejs
+  - fsevents
+  - tree-sitter
+  - tree-sitter-javascript

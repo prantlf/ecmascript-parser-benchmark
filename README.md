@@ -2,9 +2,9 @@
 
 Compares the speed and package size of various ECMAScript parsers and code generators.
 
-The new contender `meriyah` runs twice as fast as the old bard `esprima`. Babel produces an AST, which is not compatible with the other parsers.
+The new contender `meriyah` (well, it's been sever years already) runs 1.3x - 2.4x faster and is 1.6x smaller than the old bard `esprima`. Other fast parsers haven't been maintained for several years. Babel produces an AST, which is not compatible with the other parsers.
 
-Generating code with `astring` is faster than with `escodegen`.
+Generating code with `astring` is 5x - 19x faster than with `escodegen` and `astring` is 6.5x smaller.
 
 ## Synopsis
 
@@ -21,60 +21,60 @@ Generating code with `astring` is faster than with `escodegen`.
       node perf/script --locations && node perf/module --locations
 
     Parsing jquery.js as a script by...
-      esprima x 92.34 ops/sec ±0.82% (79 runs sampled)
-      acorn x 94.69 ops/sec ±0.61% (81 runs sampled)
-      babel x 45.87 ops/sec ±2.62% (61 runs sampled)
-      hermes x 23.77 ops/sec ±5.10% (44 runs sampled)
-      meriyah x 182 ops/sec ±0.83% (84 runs sampled)
-      kataw x 115 ops/sec ±1.63% (84 runs sampled)
-      seafox x 104 ops/sec ±1.95% (76 runs sampled)
-      cherow x 135 ops/sec ±2.11% (77 runs sampled)
-      escaya x 91.67 ops/sec ±1.76% (70 runs sampled)
-      tenko x 68.73 ops/sec ±1.37% (71 runs sampled)
+      esprima x 88.56 ops/sec ±1.48% (76 runs sampled)
+      acorn x 71.71 ops/sec ±1.30% (74 runs sampled)
+      babel x 48.61 ops/sec ±2.48% (64 runs sampled)
+      hermes x 27.28 ops/sec ±3.16% (50 runs sampled)
+      meriyah x 115 ops/sec ±1.19% (73 runs sampled)
+      kataw x 86.72 ops/sec ±2.37% (70 runs sampled)
+      seafox x 106 ops/sec ±1.38% (78 runs sampled)
+      cherow x 151 ops/sec ±1.97% (81 runs sampled)
+      escaya x 90.78 ops/sec ±1.53% (73 runs sampled)
+      tenko x 66.70 ops/sec ±2.06% (68 runs sampled)
+      tree-sitter x 25.69 ops/sec ±1.41% (46 runs sampled)
 
     Parsing collection-view.js as a module by...
-      esprima x 1,558 ops/sec ±0.73% (91 runs sampled)
-      acorn x 1,467 ops/sec ±0.58% (94 runs sampled)
-      babel x 1,228 ops/sec ±3.77% (88 runs sampled)
-      hermes x 460 ops/sec ±0.58% (93 runs sampled)
-      meriyah x 2,659 ops/sec ±2.09% (86 runs sampled)
-      kataw x 2,234 ops/sec ±1.03% (89 runs sampled)
-      seafox x 2,272 ops/sec ±3.51% (89 runs sampled)
-      cherow x 2,911 ops/sec ±1.04% (92 runs sampled)
-      escaya x 2,456 ops/sec ±2.24% (90 runs sampled)
-      tenko x 1,152 ops/sec ±1.10% (90 runs sampled)
-      tree-sitter x 325 ops/sec ±1.09% (86 runs sampled)
+      esprima x 1,417 ops/sec ±0.96% (92 runs sampled)
+      acorn x 1,313 ops/sec ±2.05% (90 runs sampled)
+      babel x 1,250 ops/sec ±1.06% (93 runs sampled)
+      hermes x 511 ops/sec ±0.82% (91 runs sampled)
+      meriyah x 2,391 ops/sec ±0.71% (94 runs sampled)
+      kataw x 2,222 ops/sec ±0.76% (91 runs sampled)
+      seafox x 2,368 ops/sec ±0.85% (95 runs sampled)
+      cherow x 2,765 ops/sec ±1.36% (92 runs sampled)
+      escaya x 2,471 ops/sec ±1.09% (92 runs sampled)
+      tenko x 1,185 ops/sec ±0.87% (92 runs sampled)
+      tree-sitter x 399 ops/sec ±0.76% (88 runs sampled)
 
     Parsing jquery.js as a script with locations by...
-      esprima x 75.89 ops/sec ±1.98% (66 runs sampled)
-      acorn x 55.51 ops/sec ±2.35% (59 runs sampled)
-      babel x 43.29 ops/sec ±3.45% (58 runs sampled)
-      hermes x 24.15 ops/sec ±4.71% (44 runs sampled)
-      meriyah x 91.36 ops/sec ±3.27% (67 runs sampled)
-      kataw x 86.75 ops/sec ±2.78% (65 runs sampled)
-      seafox x 79.40 ops/sec ±2.77% (69 runs sampled)
-      cherow x 85.76 ops/sec ±2.68% (64 runs sampled)
-      escaya x 81.44 ops/sec ±2.02% (70 runs sampled)
-      tenko x 55.39 ops/sec ±2.80% (59 runs sampled)
+      esprima x 54.46 ops/sec ±1.59% (63 runs sampled)
+      acorn x 55.30 ops/sec ±2.48% (64 runs sampled)
+      babel x 46.62 ops/sec ±2.44% (62 runs sampled)
+      hermes x 27.98 ops/sec ±3.17% (51 runs sampled)
+      meriyah x 101 ops/sec ±0.84% (74 runs sampled)
+      kataw x 89.18 ops/sec ±1.92% (68 runs sampled)
+      seafox x 94.25 ops/sec ±1.95% (70 runs sampled)
+      cherow x 100 ops/sec ±1.30% (74 runs sampled)
+      escaya x 84.42 ops/sec ±1.61% (71 runs sampled)
+      tenko x 63.20 ops/sec ±2.18% (66 runs sampled)
+      tree-sitter x 26.80 ops/sec ±1.12% (48 runs sampled)
 
     Parsing collection-view.js as a module with locations by...
-      esprima x 1,368 ops/sec ±1.39% (92 runs sampled)
-      acorn x 1,190 ops/sec ±0.95% (92 runs sampled)
-      babel x 1,151 ops/sec ±0.88% (91 runs sampled)
-      hermes x 426 ops/sec ±1.06% (87 runs sampled)
-      meriyah x 2,206 ops/sec ±0.74% (90 runs sampled)
-      kataw x 2,071 ops/sec ±1.26% (86 runs sampled)
-      seafox x 2,057 ops/sec ±0.85% (90 runs sampled)
-      cherow x 2,228 ops/sec ±0.84% (90 runs sampled)
-      escaya x 2,171 ops/sec ±1.11% (85 runs sampled)
-      tenko x 1,015 ops/sec ±1.09% (90 runs sampled)
-      tree-sitter x 309 ops/sec ±1.31% (87 runs sampled)
+      esprima x 1,346 ops/sec ±1.70% (92 runs sampled)
+      acorn x 1,411 ops/sec ±0.51% (94 runs sampled)
+      babel x 1,192 ops/sec ±1.19% (91 runs sampled)
+      hermes x 518 ops/sec ±0.31% (93 runs sampled)
+      meriyah x 2,054 ops/sec ±1.07% (92 runs sampled)
+      kataw x 2,224 ops/sec ±1.54% (92 runs sampled)
+      seafox x 2,159 ops/sec ±0.82% (93 runs sampled)
+      cherow x 2,359 ops/sec ±0.66% (95 runs sampled)
+      escaya x 2,298 ops/sec ±0.91% (91 runs sampled)
+      tenko x 1,143 ops/sec ±0.91% (93 runs sampled)
+      tree-sitter x 412 ops/sec ±0.55% (91 runs sampled)
 
 The `hermes` parser always creates an AST with source code locations. They cannot be disabled to gain more performance.
 
 The `tree-sitter` parser always creates an AST with source code locations. They cannot be disabled to gain more performance. It makes no difference between a script and a module either.
-
-The `tree-sitter` parser failed witn an invalid argument when parsing `jquery.js`.
 
 ### Bun
 
@@ -82,54 +82,53 @@ The `tree-sitter` parser failed witn an invalid argument when parsing `jquery.js
       bun perf/script --locations && node perf/module --locations
 
     Parsing jquery.js as a script by...
-      esprima x 60.09 ops/sec ±1.71% (63 runs sampled)
-      acorn x 68.57 ops/sec ±1.53% (71 runs sampled)
-      babel x 44.51 ops/sec ±1.68% (58 runs sampled)
-      hermes x 34.13 ops/sec ±1.99% (60 runs sampled)
-      meriyah x 166 ops/sec ±1.38% (77 runs sampled)
-      kataw x 108 ops/sec ±1.67% (72 runs sampled)
-      seafox x 123 ops/sec ±2.14% (73 runs sampled)
-      cherow x 126 ops/sec ±1.90% (72 runs sampled)
-      escaya x 105 ops/sec ±1.94% (69 runs sampled)
-      tenko x 56.54 ops/sec ±3.48% (60 runs sampled)
+      esprima x 62.11 ops/sec ±2.65% (64 runs sampled)
+      acorn x 76.15 ops/sec ±3.04% (69 runs sampled)
+      babel x 45.45 ops/sec ±3.39% (60 runs sampled)
+      hermes x 40.80 ops/sec ±2.08% (55 runs sampled)
+      meriyah x 149 ops/sec ±2.20% (77 runs sampled)
+      kataw x 122 ops/sec ±2.48% (73 runs sampled)
+      seafox x 140 ops/sec ±1.86% (78 runs sampled)
+      cherow x 156 ops/sec ±1.80% (80 runs sampled)
+      escaya x 122 ops/sec ±1.68% (78 runs sampled)
+      tenko x 82.51 ops/sec ±1.65% (71 runs sampled)
 
     Parsing collection-view.js as a module by...
-      esprima x 1,034 ops/sec ±2.60% (89 runs sampled)
-      acorn x 1,102 ops/sec ±1.26% (92 runs sampled)
-      babel x 860 ops/sec ±3.69% (81 runs sampled)
-      hermes x 572 ops/sec ±5.01% (92 runs sampled)
-      meriyah x 2,681 ops/sec ±0.82% (92 runs sampled)
-      kataw x 2,267 ops/sec ±0.83% (93 runs sampled)
-      seafox x 2,353 ops/sec ±0.97% (91 runs sampled)
-      cherow x 2,142 ops/sec ±1.29% (85 runs sampled)
-      escaya x 2,117 ops/sec ±0.98% (91 runs sampled)
-      tenko x 988 ops/sec ±1.21% (88 runs sampled)
+      esprima x 1,226 ops/sec ±0.65% (92 runs sampled)
+      acorn x 1,129 ops/sec ±2.14% (85 runs sampled)
+      babel x 865 ops/sec ±3.60% (81 runs sampled)
+      hermes x 548 ops/sec ±4.86% (88 runs sampled)
+      meriyah x 2,219 ops/sec ±2.28% (89 runs sampled)
+      kataw x 2,293 ops/sec ±1.62% (90 runs sampled)
+      seafox x 2,255 ops/sec ±3.26% (82 runs sampled)
+      cherow x 2,272 ops/sec ±4.31% (85 runs sampled)
+      escaya x 2,178 ops/sec ±0.99% (92 runs sampled)
+      tenko x 1,337 ops/sec ±1.32% (89 runs sampled)
 
     Parsing jquery.js as a script with locations by...
-      esprima x 59.12 ops/sec ±1.38% (62 runs sampled)
-      acorn x 62.63 ops/sec ±0.94% (66 runs sampled)
-      babel x 43.48 ops/sec ±1.76% (58 runs sampled)
-      hermes x 38.07 ops/sec ±1.76% (51 runs sampled)
-      meriyah x 138 ops/sec ±1.70% (79 runs sampled)
-      kataw x 119 ops/sec ±2.44% (77 runs sampled)
-      seafox x 117 ops/sec ±1.80% (75 runs sampled)
-      cherow x 113 ops/sec ±1.60% (74 runs sampled)
-      escaya x 100 ops/sec ±1.56% (74 runs sampled)
-      tenko x 60.35 ops/sec ±1.76% (63 runs sampled)
+      esprima x 59.34 ops/sec ±3.47% (63 runs sampled)
+      acorn x 65.42 ops/sec ±2.44% (68 runs sampled)
+      babel x 42.77 ops/sec ±3.48% (57 runs sampled)
+      hermes x 39.17 ops/sec ±4.18% (54 runs sampled)
+      meriyah x 126 ops/sec ±2.47% (74 runs sampled)
+      kataw x 122 ops/sec ±2.08% (78 runs sampled)
+      seafox x 119 ops/sec ±2.08% (77 runs sampled)
+      cherow x 136 ops/sec ±2.13% (77 runs sampled)
+      escaya x 116 ops/sec ±1.92% (74 runs sampled)
+      tenko x 77.95 ops/sec ±1.80% (68 runs sampled)
 
     Parsing collection-view.js as a module with locations by...
-      esprima x 882 ops/sec ±4.56% (85 runs sampled)
-      acorn x 985 ops/sec ±0.79% (91 runs sampled)
-      babel x 861 ops/sec ±1.49% (87 runs sampled)
-      hermes x 530 ops/sec ±5.70% (89 runs sampled)
-      meriyah x 1,847 ops/sec ±1.86% (85 runs sampled)
-      kataw x 1,795 ops/sec ±1.02% (83 runs sampled)
-      seafox x 1,674 ops/sec ±0.89% (85 runs sampled)
-      cherow x 1,491 ops/sec ±2.34% (82 runs sampled)
-      escaya x 1,661 ops/sec ±1.53% (88 runs sampled)
-      tenko x 908 ops/sec ±1.68% (87 runs sampled)
-
-The `tree-sitter` parser uses native libraries and `node-gyp`, which doesn't run in Bun.
+      esprima x 1,259 ops/sec ±1.14% (89 runs sampled)
+      acorn x 1,226 ops/sec ±2.10% (85 runs sampled)
+      babel x 1,212 ops/sec ±0.77% (92 runs sampled)
+      hermes x 506 ops/sec ±1.06% (91 runs sampled)
+      meriyah x 2,057 ops/sec ±0.83% (94 runs sampled)
+      kataw x 2,234 ops/sec ±0.71% (90 runs sampled)
+      seafox x 2,111 ops/sec ±1.67% (92 runs sampled)
+      cherow x 2,359 ops/sec ±0.62% (93 runs sampled)
+      escaya x 2,323 ops/sec ±0.98% (94 runs sampled)
+      tenko x 1,137 ops/sec ±1.22% (91 runs sampled)
+      tree-sitter x 397 ops/sec ±1.38% (88 runs sampled)
 
 ## Code Generating Speed
 
@@ -138,66 +137,60 @@ The `tree-sitter` parser uses native libraries and `node-gyp`, which doesn't run
     ❯ node perf/generator && node perf/generator --source-map
 
     Generating code for an AST from jquery.js by...
-      escodegen x 104 ops/sec ±0.92% (76 runs sampled)
-      astring x 465 ops/sec ±0.84% (90 runs sampled)
-      babel x 61.33 ops/sec ±0.80% (64 runs sampled)
+      escodegen x 104 ops/sec ±0.49% (76 runs sampled)
+      astring x 436 ops/sec ±1.21% (88 runs sampled)
+      babel x 65.52 ops/sec ±0.88% (68 runs sampled)
 
     Generating code with source maps for an AST from jquery.js by...
-      escodegen x 4.67 ops/sec ±2.16% (16 runs sampled)
-      astring x 97.91 ops/sec ±2.25% (72 runs sampled)
-      babel x 34.96 ops/sec ±3.29% (61 runs sampled)
+      escodegen x 4.79 ops/sec ±2.38% (16 runs sampled)
+      astring x 94.14 ops/sec ±3.21% (65 runs sampled)
+      babel x 36.20 ops/sec ±1.11% (63 runs sampled)
 
 ### Bun
 
     ❯ bun perf/generator.js && bun perf/generator.js --source-map
 
     Generating code for an AST from jquery.js by...
-      escodegen x 76.41 ops/sec ±2.72% (66 runs sampled)
-      astring x 483 ops/sec ±2.03% (78 runs sampled)
-      babel x 59.58 ops/sec ±0.89% (62 runs sampled)
+      escodegen x 75.67 ops/sec ±1.17% (65 runs sampled)
+      astring x 422 ops/sec ±2.29% (81 runs sampled)
+      babel x 57.87 ops/sec ±1.17% (61 runs sampled)
 
     Generating code with source maps for an AST from jquery.js by...
-      escodegen x 7.95 ops/sec ±1.87% (24 runs sampled)
-      astring x 158 ops/sec ±1.18% (79 runs sampled)
-      babel x 35.48 ops/sec ±1.20% (62 runs sampled)
+      escodegen x 7.56 ops/sec ±2.29% (23 runs sampled)
+      astring x 138 ops/sec ±1.39% (79 runs sampled)
+      babel x 30.08 ops/sec ±5.61% (54 runs sampled)
 
 ## Exported Parser Size
 
-    ❯ package-size esprima acorn @babel/parser hermes meriyah seafox kataw \
-        cherow @azariasb/escaya tenko tree-sitter tree-sitter-javascript
+    ❯ node perf/size esprima acorn @babel/parser hermes meriyah \
+        seafox kataw  cherow @azariasb/escaya tenko
 
-    package                        size       minified   gzipped
-    esprima@4.0.1                  278.47 KB  132.14 KB  28.59 KB
-    acorn@8.12.1                   221.78 KB  113.71 KB  32.74 KB
-    @babel/parser@7.24.8           476.68 KB  282.87 KB  73.59 KB
-    hermes@0.4.4                   308.87 KB  53.94 KB   17.98 KB
-    meriyah@4.3.0                  128.94 KB  127.33 KB  40.25 KB
-    seafox@1.7.1                   95 KB      93.41 KB   25.57 KB
-    kataw@0.0.81                   297.65 KB  291.29 KB  59.47 KB
-    cherow@1.6.9                   300.63 KB  89.85 KB   25.12 KB
-    @azariasb/escaya@0.0.63        98.24 KB   96.53 KB   25.97 KB
-    tenko@2.0.1                    371.71 KB  142.41 KB  39.75 KB
-    tree-sitter@0.20.0             51.28 KB   22.81 KB   6.8 KB
-    tree-sitter-javascript@0.21.4  65.3 KB    40.06 KB   5.83 KB
+    package                   bundled     minified    gzipped    brotlied
+    esprima@4.0.1             292.89 KB   135.35 KB   29.65 KB   24.05 KB
+    acorn@8.15.0              195.09 KB   116.87 KB   33.27 KB   27.69 KB
+    @babel/parser@7.28.4      553.56 KB   299.96 KB   77.24 KB   62.28 KB
+    hermes@0.4.4               98.64 KB    33.55 KB   12.54 KB   11.33 KB
+    meriyah@6.1.4             184.14 KB   136.75 KB   41.84 KB   35.74 KB
+    seafox@1.7.1              135.25 KB    93.19 KB   26.89 KB   23.52 KB
+    kataw@0.0.81              343.67 KB   256.92 KB   60.17 KB   49.76 KB
+    cherow@1.6.9              205.31 KB    86.89 KB   25.23 KB   22.05 KB
+    @azariasb/escaya@0.0.63   137.88 KB    96.11 KB   27.17 KB   23.62 KB
+    tenko@2.0.1               400.35 KB   141.63 KB   41.28 KB   35.70 KB
 
-Computing the package sizes may need `NODE_OPTIONS=--openssl-legacy-provider` depending on the state of `crypto` in your JavaScript VM. I had to keep `meriyah` and `tree-sitter` sizes from the previous update, because `package-size` wasn't able to compile their modern code.
+The `tree-sitter` parser uses native libraries, which have to considered, when computing the package size:
 
-The `tree-sitter` parser uses native libraries, which have to considered too, when computing the package size:
+    ❯ node perf/tree-sitter-size
 
-    ❯ node perf/tree-sitter-size.js
-
-    tree-sitter:             395.30 KB
-    tree-sitter-javascript:  389.42 KB
+    tree-sitter-javascript: 443.48 KB
 
 ## Exported Code Generator Size
 
-    ❯ package-size escodegen astring
+    ❯ node perf/size escodegen astring
 
-    package          size       minified  gzipped
-    escodegen@2.1.0  279.28 KB  97.02 KB  25.68 KB
-    astring@1.8.6    36.07 KB   15.57 KB  4.32 KB
-
-Estimating the size of `@babel/generator` failed with webpack compilation errors.
+    package                   bundled     minified    gzipped    brotlied
+    escodegen@2.1.0           201.17 KB    98.12 KB   26.92 KB   22.57 KB
+    astring@1.9.0              31.08 KB    15.61 KB    4.43 KB    3.97 KB
+    @babel/generator@7.28.3   740.37 KB   371.72 KB   79.82 KB   66.16 KB
 
 ## Contributing
 

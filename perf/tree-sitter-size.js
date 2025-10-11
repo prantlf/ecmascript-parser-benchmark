@@ -11,10 +11,8 @@ function formatSize(bytes) {
 
 async function printSize(name) {
   const lib = `${__dirname}/../node_modules/${name}/prebuilds/${platform}-${arch}/${name}.node`
-  // console.log(lib)
   const { size } = await stat(lib)
   console.log(`${name}: ${formatSize(size)}`)
 }
 
-printSize('tree-sitter')
 printSize('tree-sitter-javascript')
