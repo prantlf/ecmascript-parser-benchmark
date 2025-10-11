@@ -1,3 +1,17 @@
+# [1.0.0](https://github.com/prantlf/ecmascript-parser-benchmark/compare/v0.4.0...v1.0.0) (2025-10-11)
+
+## Features
+
+* Upgrade parsers and tools ([617c673](https://github.com/prantlf/ecmascript-parser-benchmark/commit/617c67382e838050713948b4170d27283f32d305))
+
+## BREAKING CHANGES
+
+Sizes are computed differently by package-cost,
+which tries to build an application with the dependency to be able
+to measure all bundles files, sucluding sub-dependencies. The new
+computed sizes may differ, but generally they should correlate
+with the earlier results.
+
 # [0.4.0](https://github.com/prantlf/ecmascript-parser-benchmark/compare/v0.3.0...v0.4.0) (2025-10-11)
 
 ## Features
