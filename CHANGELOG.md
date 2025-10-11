@@ -1,3 +1,14 @@
+# [0.4.0](https://github.com/prantlf/ecmascript-parser-benchmark/compare/v0.3.0...v0.4.0) (2025-10-11)
+
+## Features
+
+* Test with Bun too ([1600f75](https://github.com/prantlf/ecmascript-parser-benchmark/commit/1600f75a7caf09651e98dfd3188c8852df0b96b9))
+
+## Bug Fixes
+
+* Upgrade parsers ([cb46dd4](https://github.com/prantlf/ecmascript-parser-benchmark/commit/cb46dd4e4e0be58a3aaf02ae5db151e3ee4ced4f))
+* Measure sizes of native libraries in tree-sitter ([f2c98bf](https://github.com/prantlf/ecmascript-parser-benchmark/commit/f2c98bfde99828fa166a4e2ee8495c8c5454223e))
+
 # [0.3.0](https://github.com/prantlf/ecmascript-parser-benchmark/compare/v0.2.0...v0.3.0) (2022-09-10)
 
 
